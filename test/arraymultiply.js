@@ -6,7 +6,7 @@ describe("Multiple Table Generator", function() {
 
 	var arrayOne = arrayMultiply.arrayMultiply([1, 2, 3],[2, 3, 4]);
 
-	expect(arrayOne).to.deep.equal([[2, 3, 4], [4, 6, 8], [6, 9, 12]);
+	expect(arrayOne).to.deep.equal([[2, 3, 4], [4, 6, 8], [6, 9, 12]]);
 		    
     });
 });

@@ -61,8 +61,46 @@ exports.primeSetBrute = function(n) {
 exports.primeSetSieve = function(n) {
 
     //Generates a set of prime numbers, primeSet,  of size, n, using a sieve method 
-    
-    return false;
+
+    var sieve = [],
+	sieveSize = 0,
+	sieveCounter = 0,
+	primeSet = [],
+	sieveEntry = 0,
+	sieveHole = 0;
+
+    // Generate the inital sieve of all integers from 2 to sieveSize
+    sieveSize = 100;
+    sieve[0] = 2;
+    for (sieveCounter = 3; sieveCounter <= sieveSize; sieveCounter++) {
+	sieve.push(sieveCounter);
+    }
+
+    //Do until primeset is of size n
+    while (primeSet.length < n) {
+
+	//Find next entry of sieve that has not been deleted which will be the next prime
+	while (typeof sieve[sieveEntry] === 'undefined') {
+	    sieveEntry++;
+	}
+	
+	primeSet.push(sieve[sieveEntry]);
+	
+	//Begin deleting entries of sieve from the square of the most recent prime
+	sieveHole = Math.pow(primeSet[primeSet.length-1],2)-2;
+
+	while (sieveHole < sieve.length) {
+
+	    //Delete each multiple of the most recent prime within the sieve
+	    delete sieve[sieveHole];
+	    sieveHole += primeSet[primeSet.length-1];
+
+	}
+
+	sieveEntry++;
+    }
+
+    return primeSet;
 
 };
 

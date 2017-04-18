@@ -62,6 +62,8 @@ exports.primeSetSieve = function(n) {
 
     //Generates a set of prime numbers, primeSet,  of size, n, using a sieve method 
 
+    var wholeNumber = require("../source/wholenumber.js");
+    
     var sieve = [],
 	sieveSize = 0,
 	sieveCounter = 0,
@@ -69,6 +71,12 @@ exports.primeSetSieve = function(n) {
 	sieveEntry = 0,
 	sieveHole = 0;
 
+    //Check n is a whole number
+    if (wholeNumber.isWholeNumber(n) === false) {
+	console.log("Please enter a whole number");
+	return 0;
+    }
+    
     // Generate the inital sieve of all integers from 2 to sieveSize
     sieveSize = 100;
     sieve[0] = 2;

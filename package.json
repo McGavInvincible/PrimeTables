@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/prime-tables.js --reporter spec"
+    "test": "./node_modules/mocha/bin/mocha test/*.js --reporter spec"
   },
   "repository": {
     "type": "git",

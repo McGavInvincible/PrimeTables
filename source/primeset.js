@@ -48,10 +48,22 @@ exports.primeSetBrute = function(n) {
 
 	}
 
-	possiblePrime++
+	possiblePrime++;
 
     }
 
     return primeSet;
 
 };
+
+//---------------------------------------------------------------------------------------------------
+
+exports.primeSetSieve = function(n) {
+
+    //Generates a set of prime numbers, primeSet,  of size, n, using a sieve method 
+    
+    return false;
+
+};
+
+

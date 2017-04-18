@@ -19,5 +19,24 @@ describe("Prime Set Generator", function() {
 
 	});
     });
+
+    describe("Sieve Method", function() {
+	it("Generates a set of primes of size, n, using a sieve method", function() {
+
+	    var onePSieve = primeSet.primeSetSieve(1);
+	    var tenPSieve = primeSet.primeSetSieve(10);
+/*	    var zeroPSieve = primeSet.primeSetSieve(0);
+	    var nonintegerPSieve = primeSet.primeSetSieve(1.5);
+	    var wordPSieve = primeSet.primeSetSieve("Primes please"); */
+
+	    expect(onePSieve).to.deep.equal([2]);
+	    expect(tenPSieve).to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+/*	    expect(zeroPSieve).to.deep.equal(0);
+	    expect(nonintegerPSieve).to.deep.equal(0);
+	    expect(wordPSieve).to.deep.equal(0); */
+
+	});
+    });
+    
 });
 

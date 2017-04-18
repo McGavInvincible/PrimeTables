@@ -4,11 +4,19 @@ exports.primeSetBrute = function(n) {
 
     //Generates a set of prime numbers of size, n, by comparing to all previous primes
 
+    var wholeNumber = require("../source/wholenumber.js");
+    
     var prime = [],
 	i = 0,
 	j = 0,
 	isPrime = false;
 
+    //Check n is a whole number
+    if (wholeNumber.isWholeNumber(n) === false) {
+	console.log("Please enter a whole number");
+	return 0;
+    }
+    
     //Begin method with first prime, 2, and first number to check, 3
     prime[0] = 2;
     i = 3;

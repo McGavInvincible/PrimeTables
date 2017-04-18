@@ -9,7 +9,7 @@ describe("Integer Array Generator", function() {
 	var singleDigit = integerSet.integersFromTo(5,5);
 	var wrongWay = integerSet.integersFromTo(10,1);
 	var nonIntegerFirst = integerSet.integersFromTo(0.5,1);
-	var nonIntegerSecond = integerSet.integersFromTo(1,1);
+	var nonIntegerSecond = integerSet.integersFromTo(1,1.5);
 	var nonIntegerBoth = integerSet.integersFromTo(0.5,1.5);
 	var wordFirst = integerSet.integersFromTo("Start",1);
 	var wordSecond = integerSet.integersFromTo(1,"End");

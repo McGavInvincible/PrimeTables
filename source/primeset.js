@@ -64,6 +64,7 @@ exports.primeSetSieve = function(n) {
 
     var wholeNumber = require("../source/wholenumber.js");
     var integerSet = require("../source/integerset.js");
+    var primeBound = require("../source/primebound.js");
     
     var sieve = [],
 	sieveSize = 0,
@@ -79,7 +80,7 @@ exports.primeSetSieve = function(n) {
     }
     
     // Generate the inital sieve of all integers from 2 to sieveSize
-    sieveSize = 100;
+    sieveSize = primeBound.primeUpperBound(n);
 
     sieve = integerSet.integersFromTo(2, sieveSize);
     

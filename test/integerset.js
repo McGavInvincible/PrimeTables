@@ -2,7 +2,7 @@ var expect = require("chai").expect;
 var integerSet = require("../source/integerset.js");
 
 describe("Integer Array Generator", function() {
-    it("Generates am array of integers from first given number to second", function() {
+    it("Generates an array of integers from first given number to second", function() {
 
 	var oneToTen = integerSet.integersFromTo(1,10);
 	var minusToPlus = integerSet.integersFromTo(-2,2);

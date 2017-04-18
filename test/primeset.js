@@ -10,7 +10,8 @@ describe("Prime Set Generator", function() {
 	    var zeroP = primeSet.primeSetBrute(0);
 	    var nonintegerP = primeSet.primeSetBrute(1.5);
 	    var wordP = primeSet.primeSetBrute("Primes please");
-	
+	    var largeP = primeSet.primeSetBrute(10000);
+	    
 	    expect(oneP).to.deep.equal([2]);
 	    expect(tenP).to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
 	    expect(zeroP).to.deep.equal(0);
@@ -28,15 +29,18 @@ describe("Prime Set Generator", function() {
 	    var zeroPSieve = primeSet.primeSetSieve(0);
 	    var nonintegerPSieve = primeSet.primeSetSieve(1.5);
 	    var wordPSieve = primeSet.primeSetSieve("Primes please");
-
+	    var largePSieve = primeSet.primeSetSieve(10000);
+	    
 	    expect(onePSieve).to.deep.equal([2]);
 	    expect(tenPSieve).to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
 	    expect(zeroPSieve).to.deep.equal(0);
 	    expect(nonintegerPSieve).to.deep.equal(0);
 	    expect(wordPSieve).to.deep.equal(0);
 
+	    expect(largePSieve).to.deep.equal(largeP);
+
 	});
     });
-    
+
 });
 

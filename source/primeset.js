@@ -63,6 +63,7 @@ exports.primeSetSieve = function(n) {
     //Generates a set of prime numbers, primeSet,  of size, n, using a sieve method 
 
     var wholeNumber = require("../source/wholenumber.js");
+    var integerSet = require("../source/integerset.js");
     
     var sieve = [],
 	sieveSize = 0,
@@ -79,11 +80,9 @@ exports.primeSetSieve = function(n) {
     
     // Generate the inital sieve of all integers from 2 to sieveSize
     sieveSize = 100;
-    sieve[0] = 2;
-    for (sieveCounter = 3; sieveCounter <= sieveSize; sieveCounter++) {
-	sieve.push(sieveCounter);
-    }
 
+    sieve = integerSet.integersFromTo(2, sieveSize);
+    
     //Do until primeset is of size n
     while (primeSet.length < n) {
 

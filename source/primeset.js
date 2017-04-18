@@ -2,13 +2,13 @@
 
 exports.primeSetBrute = function(n) {
 
-    //Generates a set of prime numbers of size, n, by comparing to all previous primes
+    //Generates a set of prime numbers, primeSet,  of size, n, by comparing to all previous primes
 
     var wholeNumber = require("../source/wholenumber.js");
     
-    var prime = [],
-	i = 0,
-	j = 0,
+    var primeSet = [],
+	possiblePrime = 0,
+	nthPrime = 0,
 	isPrime = false;
 
     //Check n is a whole number
@@ -17,41 +17,41 @@ exports.primeSetBrute = function(n) {
 	return 0;
     }
     
-    //Begin method with first prime, 2, and first number to check, 3
-    prime[0] = 2;
-    i = 3;
+    //Begin method with first prime, 2, and first possible prime, 3
+    primeSet[0] = 2;
+    possiblePrime = 3;
 
-    //Do until the array prime is of size n 
-    while (prime.length < n) {
+    //Do until the array primeSet is of size n 
+    while (primeSet.length < n) {
 
 	isPrime = true;
 
-	//Compare possible prime, i, to all currently found primes
-	for (j = 0; j < prime.length; j++) {
+	//Compare possible prime to all currently found primes in primeSet
+	for (nthPrime = 0; nthPrime < primeSet.length; nthPrime++) {
 
-	    if (i % prime[j] === 0) {
+	    if (possiblePrime % primeSet[nthPrime] === 0) {
 
 		isPrime = false;
 		break;
 
-	    } else if (Math.pow(prime[j],2) > i) {
-		//Stop checking if current prime squared is larger than i
+	    } else if (Math.pow(primeSet[nthPrime],2) > possiblePrime) {
+		//Stop checking if nthprime in primeSet squared is larger than possiblePrime
 		break;
 
 	    }
 	}
 
-	//If found to be prime, push onto array of found primes
+	//If possible prime found to be prime, push onto array of found primes
 	if (isPrime === true) {
 
-	    prime.push(i);
+	    primeSet.push(possiblePrime);
 
 	}
 
-	i++
+	possiblePrime++
 
     }
 
-    return prime;
+    return primeSet;
 
 };

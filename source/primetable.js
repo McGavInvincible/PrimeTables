@@ -4,18 +4,23 @@
 var primeSet = require("../source/primeset.js"),
     arrayMultiply = require("../source/arraymultiply.js"),
     multipleTable = require("../source/createmultipletable.js"),
-    primeTableDisplay = require("../source/primetabledisplay.js"),
-    
-n = 10;
+    primeTableDisplay = require("../source/primetabledisplay.js");
 
-if (n < 100000) {
-    p = primeSet.primeSetBrute(n);
+var userNumber = 0,
+    primes = [],
+    multiTable = [],
+    outputArray = [];
+
+userNumber = 10;
+
+if (userNumber < 100000) {
+    primes = primeSet.primeSetBrute(n);
 } else {
-    p = primeSet.primeSetSieve(n);
+    primes = primeSet.primeSetSieve(n);
 }
 
-m = arrayMultiply.arrayMultiply(p, p);
+multiTable = arrayMultiply.arrayMultiply(primes, primes);
 
-outputArray = multipleTable.createMultipleTable(p, p, m);
+outputArray = multipleTable.createMultipleTable(primes, primes, multiTable);
 
 primeTableDisplay.primeTableDisplay(outputArray);

@@ -1,6 +1,8 @@
 exports.primeTableDisplay = function(m) {
 
     //Displays array m with | between each element in each row
+
+    var maxTwoDimArray = require("../source/maxtwodimarray.js");
     
     var outString = "",
 	rowCounter = 0,
@@ -14,7 +16,7 @@ exports.primeTableDisplay = function(m) {
     minTableSpace = 4;
 
     //Assumes longest element is the last element of last row
-    maxEntry = m[m.length-1][m[m.length-1].length-1];
+    maxEntry = maxTwoDimArray.maxArray(m);
     maxLength = maxEntry.toString().length;
 
     if (maxLength < minTableSpace) {maxLength = minTableSpace}

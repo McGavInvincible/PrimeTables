@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var multipleTable = require("../source/createMultipleTable.js");
+var multipleTable = require("../source/createmultipletable.js");
 
 describe("Multiple Table Generator", function() {
     it("Generates a 2d array with row and column headers and a table within", function() {

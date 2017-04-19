@@ -4,19 +4,31 @@
 var primeSet = require("../source/primeset.js"),
     arrayMultiply = require("../source/arraymultiply.js"),
     multipleTable = require("../source/createmultipletable.js"),
-    primeTableDisplay = require("../source/primetabledisplay.js");
+    primeTableDisplay = require("../source/primetabledisplay.js"),
+    inquirer = require("inquirer");
 
 var userNumber = 0,
     primes = [],
     multiTable = [],
     outputArray = [];
 
+var question = {
+    type: 'input',
+    name: 'wholeN',
+    message: 'Please enter a whole number: ',
+    default: 3
+}
+
+inquirer.prompt(question).then( function (answers) {
+    console.log(answers);
+})
+
 userNumber = 10;
 
 if (userNumber < 100000) {
-    primes = primeSet.primeSetBrute(n);
+    primes = primeSet.primeSetBrute(userNumber);
 } else {
-    primes = primeSet.primeSetSieve(n);
+    primes = primeSet.primeSetSieve(userNumber);
 }
 
 multiTable = arrayMultiply.arrayMultiply(primes, primes);

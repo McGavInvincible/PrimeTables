@@ -6,9 +6,13 @@ var primeSet = require("../source/primeset.js"),
     multipleTable = require("../source/createmultipletable.js"),
     primeTableDisplay = require("../source/primetabledisplay.js"),
     
-n = 3;
+n = 10;
 
-p = primeSet.primeSetBrute(n);
+if (n < 100000) {
+    p = primeSet.primeSetBrute(n);
+} else {
+    p = primeSet.primeSetSieve(n);
+}
 
 m = arrayMultiply.arrayMultiply(p, p);
 

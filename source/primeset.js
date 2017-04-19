@@ -82,25 +82,28 @@ exports.primeSetSieve = function(n) {
     // Generate the inital sieve of all integers from 2 to sieveSize
     sieveSize = primeBound.primeUpperBound(n);
 
-    sieve = integerSet.integersFromTo(2, sieveSize);
+    sieve = [false,false];
+    for (sieveCOunter = 3; sieveCounter <= sieveSize; sieveCounter++) {
+	sieve.push(true);
+    }
     
     //Do until primeset is of size n
     while (primeSet.length < n) {
 
 	//Find next entry of sieve that has not been deleted which will be the next prime
-	while (typeof sieve[sieveEntry] === 'undefined') {
+	while (sieve[sieveEntry] === false) {
 	    sieveEntry++;
 	}
 	
-	primeSet.push(sieve[sieveEntry]);
+	primeSet.push(sieveEntry);
 	
 	//Begin deleting entries of sieve from the square of the most recent prime
-	sieveHole = Math.pow(primeSet[primeSet.length-1],2)-2;
+	sieveHole = Math.pow(primeSet[primeSet.length-1],2);
 
 	while (sieveHole < sieve.length) {
 
 	    //Delete each multiple of the most recent prime within the sieve
-	    delete sieve[sieveHole];
+	    sieve[sieveHole] = false;
 	    sieveHole += primeSet[primeSet.length-1];
 
 	}

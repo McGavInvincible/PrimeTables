@@ -28,7 +28,7 @@ exports.primeTableDisplay = function(m) {
 	for (colCounter = 0; colCounter < m[rowCounter].length; colCounter++) {
 
 	    //Fills in empty space such that all elements of table are equally spaced
-	    for (spaceCounter = 0; spaceCounter < maxLength-m[i][j].toString().length; spaceCounter++) {
+	    for (spaceCounter = 0; spaceCounter < maxLength-m[rowCounter][colCounter].toString().length; spaceCounter++) {
 		outString = outString.concat(" ");
 	    }
 	    

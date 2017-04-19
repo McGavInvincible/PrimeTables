@@ -8,7 +8,7 @@ describe("Maximum Element Finder", function() {
 	var somenumbers = maxTwoDimArray.maxArray([[1, 6, "Word"],[5, [], 2]]);
 
 	expect(allnumbers).to.equal(4);
-	expect(somenumbers).to.equal(4);
+	expect(somenumbers).to.equal(6);
 		    
     });
 });

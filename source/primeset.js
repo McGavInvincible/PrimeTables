@@ -5,7 +5,7 @@ exports.primeSetBrute = function(n) {
     //Generates a set of prime numbers, primeSet,  of size, n, by comparing to all previous primes
 
     var wholeNumber = require("../source/wholenumber.js");
-    
+
     var primeSet = [],
 	possiblePrime = 0,
 	nthPrime = 0,

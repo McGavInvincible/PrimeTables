@@ -16,23 +16,22 @@ var question = {
     type: 'input',
     name: 'wholeN',
     message: 'Please enter a whole number: ',
-    default: 3
 }
 
 inquirer.prompt(question).then( function (answers) {
-    console.log(answers);
+
+    userNumber = parseInt(answers.wholeN);
+
+    if (userNumber < 100000) {
+	primes = primeSet.primeSetBrute(userNumber);
+    } else {
+	primes = primeSet.primeSetSieve(userNumber);
+    }
+
+    multiTable = arrayMultiply.arrayMultiply(primes, primes);
+
+    outputArray = multipleTable.createMultipleTable(primes, primes, multiTable);
+
+    primeTableDisplay.primeTableDisplay(outputArray);
+
 })
-
-userNumber = 10;
-
-if (userNumber < 100000) {
-    primes = primeSet.primeSetBrute(userNumber);
-} else {
-    primes = primeSet.primeSetSieve(userNumber);
-}
-
-multiTable = arrayMultiply.arrayMultiply(primes, primes);
-
-outputArray = multipleTable.createMultipleTable(primes, primes, multiTable);
-
-primeTableDisplay.primeTableDisplay(outputArray);

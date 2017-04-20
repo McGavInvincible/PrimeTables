@@ -9,26 +9,28 @@ var primeTableDisplay = require("../source/primetabledisplay.js"),
 var userNumber = 0,
     outputArray = [];
 
-var question = {
+var getNumber = {
     type: 'input',
     name: 'wholeN',
-    message: 'Please enter a whole number: ',
+    message: 'Please enter a whole number: (or "quit" to stop)',
 }
 
 function main() {
 
-    inquirer.prompt(question).then( function (answers) {
+    inquirer.prompt(getNumber).then( function (answers) {
 
 	userNumber = parseInt(answers.wholeN);
 
 	if (wholeNumber.isWholeNumber(userNumber) === true) {
 	    outputArray = primeTableGenerator.primeTableGenerator(userNumber);
 	    primeTableDisplay.primeTableDisplay(outputArray);
-	} else {
-	    main()
+	    main();
+	} else if (answers.wholeN !== "quit") {
+	    main();
 	}
-	
+
     })
-}
+	
+}				   
 
 main()
